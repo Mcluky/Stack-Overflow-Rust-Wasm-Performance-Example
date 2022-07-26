@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>hellooo</p>
+<script type="module">
+    import init, * as wasm from "./pkg/rustperformance.js";
+    init()
+        .then(() => {
+            console.log(wasm)
+            window.bench_rs = (number) => wasm.bench_rs(BigInt(number));
+        });
+
+    function calculateIsPrime(number) {
+        if (number === 1) {
+            return false;
+        }
+        if (number === 2) {
+            return true;
+        }
+        for (let i = 2; i < number; i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function bench_js(max) {
+        let tot = 0;
+        for (let n = 1; n <= max; n++) {
+            tot += calculateIsPrime(n);
+        }
+        return tot;
+    }
+
+    window.bench_js = bench_js;
+</script>
+</body>
+</html>
