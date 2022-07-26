@@ -1,3 +1,35 @@
+
+# Basic Example Prime Calculation Comparison
+
+Perquisite:
+- installed rust and wasm target
+- installed wasm-pack
+- installed npm and serve (npm install -g serve)
+
+
+Run the following command within the repository:
+
+```bash
+wasm-pack build --release --target web
+serve 
+```
+
+Then go to http://localhost:3000 and open the browser console and run the following:
+
+```javascript
+// Measure JavaScript performance
+console.time("js"); console.log(bench_js(200000)); console.timeEnd("js");
+
+// Measure WASM performance
+console.time("rs"); console.log(bench_rs(200000)); console.timeEnd("rs");
+````
+
+
+
+
+----------------------------------
+Old template stuff:
+
 <div align="center">
 
   <h1><code>wasm-pack-template</code></h1>
