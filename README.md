@@ -1,7 +1,7 @@
 
 # Basic Example Prime Calculation Comparison
 
-Perquisite:
+Prerequisite:
 - installed rust and wasm target
 - installed wasm-pack
 - installed npm and serve (npm install -g serve)
