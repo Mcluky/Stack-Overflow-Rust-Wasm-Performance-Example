@@ -7,7 +7,7 @@ Prerequisite:
 - installed npm and serve (npm install -g serve)
 
 
-Run the following command within the repository:
+Run the following commands within the repository:
 
 ```bash
 wasm-pack build --release --target web
